@@ -12,7 +12,6 @@
 - [Credits](#credits)
 - [License](#license)
 - [Contributing](#contributing)
-- [Contact](#contact)
 
 ## Overview
 

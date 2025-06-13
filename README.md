@@ -9,7 +9,6 @@
 - [Credits](#credits)
 - [License](#license)
 - [Contributing](#contributing)
-- [Contact](#contact)
 
 This pull request transitions SlizzAi from its prototyping phases into its official production release—version 3.1. This production build is designed for high-performance asset processing, integrating advanced Unreal Engine interfacing, adaptive GPU scheduling, dual-phase physics analysis, and a comprehensive analysis/feedback mechanism.
 

@@ -1,6 +1,6 @@
 # SlizzAi-3
 
-SlizzAi-3 is a revolutionary AI-powered plugin designed to redefine real-time hyper-realism in computer graphics. Originally built as an external image prompt enhancer, SlizzAi has evolved into an integrated system that marries decades of legacy research with state-of-the-art neural network techniques, physics-based simulations, and advanced rendering methods. Now, with the latest update—**SlizzAi v3.2**—it’s ready for production as a fully featured Unreal Engine plugin.
+SlizzAi-3.2 is a revolutionary AI-powered plugin designed to redefine real-time hyper-realism in computer graphics. Originally built as an external image prompt enhancer, SlizzAi has evolved into an integrated system that marries decades of legacy research with state-of-the-art neural network techniques, physics-based simulations, and advanced rendering methods. Now, with the latest update—**SlizzAi v3.2**—it’s ready for production as a fully featured Unreal Engine plugin.
 
 ## Table of Contents
 

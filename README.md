@@ -60,7 +60,7 @@ Thank you for your support and contributions to the growth of SlizzAi. We’re t
 ---
 
 Enjoy the update, and let’s keep innovating—**SlizzAi v3.2.1** is here to redefine the future of real-time graphics in Unreal Engine.
-## Features
+## v3.2 Features
 
 ### Core Components
 - **Research Repository:**  

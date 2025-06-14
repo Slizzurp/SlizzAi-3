@@ -17,6 +17,49 @@ SlizzAi-3.2 is a revolutionary AI-powered plugin designed to redefine real-time 
 
 SlizzAi-3 is built to push the boundaries of what’s possible in real-time rendering. By integrating classical research from early computer science experiments with modern AI-driven techniques, the plugin delivers a truly cutting-edge solution for dynamic global illumination, real-time physics-based rendering, and adaptive resource management inside Unreal Engine. Whether you are a game developer, technical artist, or researcher, SlizzAi-3 provides the essential tools to bring hyper-realistic visuals to life.
 
+# SlizzAi v3.2.1 Update Notes
+
+We are excited to announce the release of **SlizzAi v3.2.1**, an incremental update that further refines our groundbreaking real-time rendering plugin for Unreal Engine. This update builds on the robust foundation of SlizzAi v3.2 and introduces several enhancements aimed at improving performance, reliability, and overall functionality.
+
+## Key Enhancements in v3.2.1
+
+- **Performance Monitoring & Metrics:**  
+  - Introduced a dedicated **PerformanceMonitor** module that tracks FPS and memory usage in real time.
+  - This allows developers to monitor runtime performance across different hardware setups and optimize scenes accordingly.
+
+- **Dynamic Hardware Detection:**  
+  - Implemented a new hardware detection function that dynamically assesses GPU specifications.
+  - The plugin now adjusts simulation fidelity automatically based on available system resources, replacing hardcoded values with adaptive logic.
+
+- **Enhanced Neural Processing:**  
+  - Rolled out an updated **NeuralRefiner** module that lays the groundwork for integrating actual deep learning models (e.g., CNNs via PyTorch).
+  - Voxel refinement now includes a neural-based pass that further enhances the accuracy of real-time global illumination simulation.
+
+- **Extended Research Data Integration:**  
+  - Expanded the **ResearchRepository** with an **ExtendedResearchRepository**, allowing the plugin to ingest additional real-world datasets.
+  - This reinforces the scientific foundation behind our algorithms by incorporating more detailed physics simulations and material properties.
+
+- **Robust Error Handling:**  
+  - Added comprehensive try/except blocks in critical system areas—such as voxel grid initialization and neural inference—to improve overall stability.
+  - Fallback mechanisms are in place to ensure the system maintains functionality even when errors occur.
+
+- **Unreal Engine Integration Updates:**  
+  - Updated the Unreal Engine actor, now named **SlizzAiRealTimeActorFinal_Updated**, for seamless real-time simulation.
+  - Blueprint callable functions have been enhanced (e.g., `save_diagnostics()`) to facilitate in-editor diagnostics and performance tuning.
+
+## What’s Next?
+
+Our vision for SlizzAi continues to evolve. With v3.2.1, we’re setting the stage for even more sophisticated neural processing and deeper integration with Unreal Engine’s advanced rendering systems. In the coming months, we plan to:
+  
+- Expand neural network integration details, including model architecture insights and training methodologies.
+- Further fine-tune dynamic resource management based on real-world testing on a wider range of GPUs.
+- Gather community feedback to drive the next phase of enhancements, ensuring that SlizzAi remains at the cutting edge of real-time hyper-realism.
+
+Thank you for your support and contributions to the growth of SlizzAi. We’re thrilled to continue pushing the boundaries of AI-driven graphics technology together!
+
+---
+
+Enjoy the update, and let’s keep innovating—**SlizzAi v3.2.1** is here to redefine the future of real-time graphics in Unreal Engine.
 ## Features
 
 ### Core Components

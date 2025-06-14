@@ -215,22 +215,22 @@ class SlizzAiRealTimeActorFinal(unreal.Actor):
         self.simulation_interval = 1.0  # Interval (in seconds) between simulation updates.
         self.time_accumulator = 0.0
 
-    @unreal.ufunction(override=True)
-    def begin_play(self) -> None:
-        unreal.log("SlizzAiRealTimeActorFinal starting up. Initializing plugin core...")
-        self.plugin_core.initialize()
-        unreal.log("SlizzAi v3.2 Production Plugin Core successfully initialized.")
+@unreal.ufunction()
+def begin_play(self) -> None:
+    unreal.log("SlizzAiRealTimeActorFinal starting up. Initializing plugin core...")
+    self.plugin_core.initialize()
+    unreal.log("SlizzAi v3.2 Production Plugin Core successfully initialized.")
 
-    @unreal.ufunction(override=True)
-    def tick(self, delta_seconds: float) -> None:
-        self.time_accumulator += delta_seconds
-        if self.time_accumulator >= self.simulation_interval:
-            # Dynamically determine hardware capability.
-            hardware_capability = 8  # Replace with actual detection for production.
-            results = self.plugin_core.run_simulation(hardware_capability)
-            # Log and optionally use results to adjust materials, UI, etc.
-            unreal.log("Production Real-Time Update: {0}".format(results))
-            self.time_accumulator = 0.0
+@unreal.ufunction()
+def tick(self, delta_seconds: float) -> None:
+    self.time_accumulator += delta_seconds
+    if self.time_accumulator >= self.simulation_interval:
+        # Dynamically determine hardware capability.
+        hardware_capability = 8  # Replace with actual detection for production.
+        results = self.plugin_core.run_simulation(hardware_capability)
+        # Log and optionally use results to adjust materials, UI, etc.
+        unreal.log("Production Real-Time Update: {0}".format(results))
+        self.time_accumulator = 0.0
 
     @unreal.ufunction()
     def save_diagnostics(self) -> None:
@@ -265,12 +265,30 @@ import time
 import json
 import random
 from typing import List, Dict, Any
+
+# psutil fallback
 try:
     import psutil
 except ImportError:
     psutil = None
 
-import unreal  # Unreal Engine Python API
+# unreal fallback
+try:
+    import unreal  # Unreal Engine Python API
+except ImportError:
+    class UnrealStub:
+        @staticmethod
+        def log(msg): print(f"[UNREAL LOG] {msg}")
+        @staticmethod
+        def log_warning(msg): print(f"[UNREAL WARNING] {msg}")
+        @staticmethod
+        def log_error(msg): print(f"[UNREAL ERROR] {msg}")
+        @staticmethod
+        def uclass(): return lambda cls: cls
+        @staticmethod
+        def ufunction(): return lambda func: func
+        class Actor: pass
+    unreal = UnrealStub()
 
 # -----------------------------------------------------------------------------
 # Performance Monitor Module
@@ -283,7 +301,7 @@ class PerformanceMonitor:
         self.fps = 0
         self.memory_usage_mb = 0
 
-    def update(self) -> (float, float):
+    def update(self) -> tuple[float, float]:
         self.frame_count += 1
         elapsed = time.time() - self.start_time
         if elapsed >= 1.0:
@@ -469,24 +487,24 @@ class SlizzAiRealTimeActorFinal_Updated(unreal.Actor):
         self.simulation_interval = 1.0  # Seconds between simulation updates.
         self.time_accumulator = 0.0
 
-    @unreal.ufunction(override=True)
-    def begin_play(self) -> None:
-        unreal.log("SlizzAiRealTimeActorFinal_Updated initializing core v3.2.1...")
-        self.plugin_core.initialize()
-        unreal.log("SlizzAi v3.2.1 Plugin Core initialized.")
+@unreal.ufunction()
+def begin_play(self) -> None:
+    unreal.log("SlizzAiRealTimeActorFinal_Updated initializing core v3.2.1...")
+    self.plugin_core.initialize()
+    unreal.log("SlizzAi v3.2.1 Plugin Core initialized.")
 
-    @unreal.ufunction(override=True)
-    def tick(self, delta_seconds: float) -> None:
-        self.time_accumulator += delta_seconds
-        if self.time_accumulator >= self.simulation_interval:
-            results = self.plugin_core.run_simulation()
-            unreal.log("v3.2.1 Update Real-Time Simulation: {0}".format(results))
-            self.time_accumulator = 0.0
+@unreal.ufunction()
+def tick(self, delta_seconds: float) -> None:
+    self.time_accumulator += delta_seconds
+    if self.time_accumulator >= self.simulation_interval:
+        results = self.plugin_core.run_simulation()
+        unreal.log("v3.2.1 Update Real-Time Simulation: {0}".format(results))
+        self.time_accumulator = 0.0
 
-    @unreal.ufunction()
-    def save_diagnostics(self) -> None:
-        """Blueprint callable function to save diagnostic logs."""
-        self.plugin_core.diagnostics.save_logs("diagnostics_log_v321.json")
+@unreal.ufunction()
+def save_diagnostics(self) -> None:
+    """Blueprint callable function to save diagnostic logs."""
+    self.plugin_core.diagnostics.save_logs("diagnostics_log_v321.json")
 
 # -----------------------------------------------------------------------------
 # End of SlizzAi v3.2.1 Update Segment

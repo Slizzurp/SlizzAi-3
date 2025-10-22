@@ -1,7 +1,3 @@
-Here’s your mythic-grade GitHub description for [SlizzAi-3](https://github.com/Slizzurp/SlizzAi-3) — cinematic, technical, and orchestration-ready:
-
----
-
 ## 🌌 SlizzAi v3.6 — Eco-Intelligent HDR Image Generation Framework
 
 SlizzAi v3.6 is a production-grade rendering and image-processing pipeline that fuses photorealistic fidelity, fractal-trained super-sampling, golden-ratio compression, and sustainable resource management. Built atop Unreal Engine 5’s Nanite and Lumen systems, it delivers 16K HDR imagery under a 1-liter/day cooling budget — redefining creative infrastructure for artists, studios, and simulation labs.
@@ -87,9 +83,3 @@ Distributed under the MIT License. See `LICENSE` for details.
 ### 🌱 Vision
 
 SlizzAi v3.6 isn’t just about rendering — it’s about reshaping how technology intersects with sustainability. Every pixel rendered reflects a step toward eco-conscious creativity.
-
----
-
-Let me know if you want to riff on the README tone, add contributor credits, or prep a cinematic launch thread for MKPublishings. This repo deserves a mythic rollout. 
-
-Sources: 
